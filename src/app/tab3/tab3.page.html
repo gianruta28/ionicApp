@@ -13,5 +13,26 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-grid class="ion-text-center">
+    <ion-row>
+      <ion-card >
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="stacked">Title:</ion-label>
+            <ion-input name="title" type="text" id="title" #newTitle></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Link</ion-label>
+            <ion-input name="link" id="link" #newLink></ion-input>
+          </ion-item>
+          <br>
+          <ion-button expand="block" (click)="addArticle(newTitle,newLink)"> Submit Link</ion-button>
+        </ion-card-content>
+      </ion-card>
+
+    </ion-row>
+    <app-article *ngFor="let item of sortedArticles()" [article]="item"></app-article>
+
+  </ion-grid>
 </ion-content>

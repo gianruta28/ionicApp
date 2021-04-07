@@ -1,0 +1,36 @@
+<ion-row>
+  <ion-card>
+    <ion-item color="secondary" style="text-align: center">
+      <ion-label>
+        <h1>{{article.votes}}</h1>
+        <h2>POINTS</h2>
+      </ion-label>
+    </ion-item>
+    <a href="{{article.link}}" class="styleless-a">
+      <ion-card-header>
+        <ion-card-title>{{article.title}}</ion-card-title>
+        <ion-card-subtitle>{{article.domain()}}</ion-card-subtitle>
+      </ion-card-header>
+    </a>
+    <ion-card-content>
+      <ion-row>
+        <ion-col>
+          <a (click)="voteUp()" class="styleless-a" >
+            <ion-label >
+              <ion-icon name="arrow-up-outline"></ion-icon>
+              upvote
+            </ion-label>
+          </a>
+        </ion-col>
+        <ion-col>
+          <a (click)="voteDown()" class="styleless-a">
+            <ion-label >
+              <ion-icon name="arrow-down-outline"></ion-icon>
+              downvote
+            </ion-label>
+          </a>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-row>
